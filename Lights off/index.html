@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            transition: .5s;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 25px;
+            position: absolute;
+            bottom: 375px;
+            z-index: 12312312312;
+        }
+
+        .lamp {
+            position: relative;
+            width: 200px;
+            height: 300px;
+
+        }
+
+        .shade {
+            width: 160px;
+            height: 100px;
+            background: #5fa8e8;
+            border-radius: 30px 30px 10px 10px;
+            position: absolute;
+            left: 20px;
+            z-index: 12312312312;
+        }
+
+        .bulb {
+            width: 40px;
+            height: 40px;
+            background: #555;
+            border-radius: 50%;
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            transition: .5s;
+        }
+
+        .stand {
+            width: 8px;
+            height: 130px;
+            background: silver;
+            position: absolute;
+            top: 100px;
+            left: 96px;
+        }
+
+        .base {
+            width: 90px;
+            height: 20px;
+            background: #1f3b63;
+            position: absolute;
+            bottom: 0;
+            left: 55px;
+            top: 230px;
+            border-radius: 5px;
+        }
+
+        /* عند التشغيل */
+        body.light-on {
+            background: #f8f0c8;
+        }
+
+        body.light-on .bulb {
+            background: yellow;
+            box-shadow:
+                0 0 30px yellow,
+                0 0 60px yellow,
+                0 0 120px yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn"></button>
+
+    <div class="lamp">
+        <div class="shade"></div>
+        <div class="bulb"></div>
+        <div class="stand"></div>
+        <div class="base"></div>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+
+            document.body.classList.toggle("light-on");
+
+        });
+    </script>
+
+</body>
+
+</html>
